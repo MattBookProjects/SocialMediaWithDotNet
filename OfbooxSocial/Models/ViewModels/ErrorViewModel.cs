@@ -1,4 +1,4 @@
-namespace OfbooxSocial.Models
+namespace OfbooxSocial.Models.ViewModels
 {
     public class ErrorViewModel
     {

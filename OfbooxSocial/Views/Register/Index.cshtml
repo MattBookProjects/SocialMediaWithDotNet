@@ -1,0 +1,82 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using OfbooxSocial.Models.ViewModels;
+@model RegisterViewModel;
+
+<div class="container row-gap-3 col-lg-6 col-md-sm-8 col-sm-10 col-xs-12">
+    <div class="row  text-center">
+        <h1>REGISTER</h1>
+    </div>
+   
+    @if(ViewData["ServerError"] != null)
+    {
+        <div class="row">
+            <div class="col text-danger">
+                @ViewData["ServerError"];
+            </div> 
+        </div>
+
+    }
+    <form asp-controller="Register" asp-action="Index">
+        <div class="row form-group">
+            <div class="col">
+                <input class="form-control col-auto" type="text" asp-for="Username" placeholder="Username" />
+            </div>
+        </div>
+        @if(ViewData["UsernameError"] != null){
+            <div class="row">
+                <div class="col text-danger">
+                    @ViewData["UsernameError"]
+                </div>
+            </div>
+        }
+        <div class="row form-group">
+            <div class="col">
+                <input class="form-control" type="password" asp-for="Password" placeholder="Password" />
+            </div>  
+        </div>
+        @if (ViewData["PasswordError"] != null)
+        {
+            <div class="row">
+                <div class="col text-danger">
+                    @ViewData["PasswordError"]
+                </div>  
+            </div>
+        }
+        <div class="row form-group">
+            <div class="col">
+                <input class="form-control" type="password" asp-for="RepeatPassword" placeholder="Repeat password" />
+            </div>
+        </div>
+        @if (ViewData["RepeatPasswordError"] != null)
+        {
+            <div class="row">
+                <div class="col text-danger">
+                    @ViewData["RepeatPasswordError"]
+                </div>
+            </div>
+        }
+        <div class="row form-group">
+            <div class="col">
+                <input class="form-control" type="email" asp-for="Email" placeholder="Email Address" />
+            </div>
+            
+        </div>
+        @if (ViewData["EmailError"] != null)
+        {
+            <div class="row">
+                <div class="col text-danger">
+                    @ViewData["EmailError"]
+                </div>
+            </div>
+        }
+        <div class="row form-group justify-content-end">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <input class="form-control btn-primary" value="REGISTER" type="submit" />
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using OfbooxSocial.Models;
+using OfbooxSocial.Models.ViewModels;
 using System.Diagnostics;
 
 namespace OfbooxSocial.Controllers
